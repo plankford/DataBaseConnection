@@ -68,5 +68,39 @@ namespace assignment1
             return returnString;
         }
 
+        public void UpdateItem(string id, string name, string pack, string price)
+        {
+            Beverage beverageToUpdate = beveragePlankfordEntities.Beverages.Find(id);
+
+            beverageToUpdate.name = name;
+            beverageToUpdate.pack = pack;
+            beverageToUpdate.price = Convert.ToDecimal(price);
+
+            beveragePlankfordEntities.SaveChanges();
+        }
+
+        public void DeleteItem(string id)
+        {
+            //Find the item to delete
+            Beverage beverageToDelete = beveragePlankfordEntities.Beverages.Find(id);
+
+            //Delete the item
+            beveragePlankfordEntities.Beverages.Remove(beverageToDelete);
+
+            //Save the changes
+            beveragePlankfordEntities.SaveChanges();
+
+            //Check and make sure the item was deleted
+            beverageToDelete = beveragePlankfordEntities.Beverages.Find(id);
+            if (beverageToDelete == null)
+            {
+                Console.WriteLine("The item has been successfully deleted");
+            }
+            else
+            {
+                Console.WriteLine("Item failed to delete");
+            }
+        }
+
     }
 }

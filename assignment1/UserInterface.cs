@@ -190,5 +190,42 @@ namespace assignment1
             //Return the reutrnValue
             return returnValue;
         }
+
+        public string GetUpdateString()
+        {
+            Console.WriteLine();
+            Console.WriteLine("What is the ID of the item you would like to update");
+            Console.Write("> ");
+            string id = Console.ReadLine();
+
+            return id;
+        }
+
+        public string[] DisplayUpdateString(string updateInformation)
+        {
+            Console.WriteLine("Item to update: " + updateInformation);
+
+            Console.WriteLine("What is the new Item name?");
+            Console.Write("> ");
+            string name = Console.ReadLine();
+            Console.WriteLine("What is the new Item pack?");
+            Console.Write("> ");
+            string pack = Console.ReadLine();
+            Console.WriteLine("What is the new Item cost?");
+            Console.Write("> ");
+            string price = Console.ReadLine();
+
+            return new string[] { name, pack, price };
+        }
+
+        public string GetDeleteString()
+        {
+            Console.WriteLine();
+            Console.WriteLine("What is the ID of the item you would like to delete");
+            Console.Write("> ");
+            string id = Console.ReadLine();
+
+            return id;
+        }
     }
 }

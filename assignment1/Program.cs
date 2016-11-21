@@ -75,11 +75,25 @@ namespace assignment1
                         }
                         break;
                     case 4:
-                        //Update An Existing item
+                        //Update An Existing item                        
+                        string updateID = userInterface.GetUpdateString();
+                        string updateItemInformation = beverageAPI.FindById(updateID);
+                        if (updateItemInformation != null)
+                        {
+                           string[] updateInformation = userInterface.DisplayUpdateString(updateItemInformation);
+                           beverageAPI.UpdateItem(updateID, updateInformation[0], updateInformation[1], updateInformation[2]);
+                        }
+                        else
+                        {
+                            userInterface.DisplayItemFoundError();
+                        }
+                        
                         break;
 
                     case 5:
                         //Delete An Existing item
+                        string deleteString = userInterface.GetDeleteString();
+                        beverageAPI.DeleteItem(deleteString);
                         break;
                 }
 
