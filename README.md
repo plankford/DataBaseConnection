@@ -2,7 +2,7 @@
 
 ## Due 11-22-2016
 
-## Author
+## Author: Patrick Lankford
 
 ## Description
 
@@ -80,5 +80,7 @@ Solution Requirements:
 | Total                                   | 100    |
 
 ## Outside Resources Used
+MSDN, InClassAssignment5
 
 ## Known Problems, Issues, And/Or Errors in the Program
+None known

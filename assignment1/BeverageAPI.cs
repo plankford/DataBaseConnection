@@ -29,11 +29,13 @@ namespace assignment1
             newBeverageToAdd.name = description;
             newBeverageToAdd.pack = pack;
 
+            //Add the item to the collection
             try
             {
                 beveragePlankfordEntities.Beverages.Add(newBeverageToAdd);
                 beveragePlankfordEntities.SaveChanges();
             }
+            //If the item failed to add remove the item
             catch (Exception e)
             {
                 beveragePlankfordEntities.Beverages.Remove(newBeverageToAdd);
@@ -43,7 +45,7 @@ namespace assignment1
             return;
         }
 
-        //Get The Print String Array For All Items
+        //Display all of the item from the collection
         public void PrintAllBeverages()
         {
             foreach (Beverage beverage in beveragePlankfordEntities.Beverages)
@@ -60,25 +62,32 @@ namespace assignment1
 
             Beverage foundBeverage = beveragePlankfordEntities.Beverages.Find(id);
 
+            //Check to see if the item exists in the collection. If it does, create the string for the item
             if (foundBeverage != null)
             {
                 returnString = foundBeverage.id + " " + foundBeverage.name + " " + foundBeverage.pack + " " + foundBeverage.price;
             }
             
+            //return the string that was created containing the item
             return returnString;
         }
 
+        //Update and existing item in the collection
         public void UpdateItem(string id, string name, string pack, string price)
         {
+            //Find the item that will be updates
             Beverage beverageToUpdate = beveragePlankfordEntities.Beverages.Find(id);
 
+            //Update the following fields of the item
             beverageToUpdate.name = name;
             beverageToUpdate.pack = pack;
             beverageToUpdate.price = Convert.ToDecimal(price);
 
+            //Save the changes
             beveragePlankfordEntities.SaveChanges();
         }
 
+        //Delete and item from the collection
         public void DeleteItem(string id)
         {
             //Find the item to delete

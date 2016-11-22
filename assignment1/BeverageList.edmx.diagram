@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7589a4e45de044fd85451fe4c13778ef" Name="Diagram1">
-        <EntityTypeShape EntityType="BeveragePLankfordModel.Beverage" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeveragePLankfordModel.Beverage" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

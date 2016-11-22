@@ -11,7 +11,7 @@ namespace assignment1
 {
     class UserInterface
     {
-        const int maxMenuChoice = 5;
+        const int maxMenuChoice = 6;
         //---------------------------------------------------
         //Public Methods
         //---------------------------------------------------
@@ -77,15 +77,15 @@ namespace assignment1
             return new string[] { id, description, pack };
         }
 
-        //Display All Items
-        public void DisplayAllItems(string[] allItemsOutput)
-        {
-            Console.WriteLine();
-            foreach (string itemOutput in allItemsOutput)
-            {
-                Console.WriteLine(itemOutput);
-            }
-        }
+        ////Display All Items
+        //public void DisplayAllItems(string[] allItemsOutput)
+        //{
+        //    Console.WriteLine();
+        //    foreach (string itemOutput in allItemsOutput)
+        //    {
+        //        Console.WriteLine(itemOutput);
+        //    }
+        //}
 
         //Display All Items Error
         public void DisplayAllItemsError()
@@ -191,6 +191,7 @@ namespace assignment1
             return returnValue;
         }
 
+        //Create the string for the updated item
         public string GetUpdateString()
         {
             Console.WriteLine();
@@ -201,6 +202,7 @@ namespace assignment1
             return id;
         }
 
+        //Display the item that will be updated and create the new updated item to add
         public string[] DisplayUpdateString(string updateInformation)
         {
             Console.WriteLine("Item to update: " + updateInformation);
@@ -218,6 +220,7 @@ namespace assignment1
             return new string[] { name, pack, price };
         }
 
+        //Create the string for item deletion
         public string GetDeleteString()
         {
             Console.WriteLine();
